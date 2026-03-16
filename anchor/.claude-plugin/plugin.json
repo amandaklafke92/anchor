@@ -1,0 +1,9 @@
+{
+  "name": "anchor",
+  "version": "0.1.0",
+  "description": "A personal memory system for capturing and synthesising lived experience — daily entries, weekly synthesis, and monthly anchors.",
+  "author": {
+    "name": "Amanda"
+  },
+  "keywords": ["journaling", "memory", "personal", "reflection", "writing"]
+}
