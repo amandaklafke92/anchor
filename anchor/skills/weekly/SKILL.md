@@ -5,77 +5,110 @@ description: >
   "wrap up the week", "weekly review", or asks to compile and summarise the week's
   entries. Use when the user wants to synthesise daily entries into a complete weekly
   file with a summary, themes, and highlights.
-version: 0.1.0
+version: 0.3.0 
 ---
 
 # Anchor — Weekly Synthesis Skill
 
-*Part of the Anchor plugin. Read ${CLAUDE_PLUGIN_ROOT}/references/anchor-context.md before executing.*
-
----
-
 ## Job
 
-Take the week's daily entries and synthesise them into a complete weekly file — header block, formatted entries, and weekly summary.
+Read the week's daily entries and synthesise them into a complete weekly file — weekly summary at the top, followed by daily entries, then the populated header block.
 
 ---
 
-## Input
+## File naming convention
 
-The user will provide one or more of the following:
-- Daily entry blocks formatted by the daily capture skill
-- Raw entries not yet formatted (process these as per the daily capture skill first)
-- A date range for the week
+```
+YYYY-MM_mmm_week-DD.md
+```
+
+| Segment | Example | Notes |
+|---------|---------|-------|
+| `YYYY-MM` | `2026-01` | Zero-padded month |
+| `mmm` | `jan` | Three-letter month abbreviation |
+| `week-DD` | `week-20` | Day the week starts |
+
+Examples: `2026-01_jan_week-20.md`, `2026-03_mar_week-17.md`
+
+Weeks spanning two months are assigned to the month the first entry of that week falls in. If the first entry is dated 30 March, the file belongs to March — regardless of how many days fall in April.
+
+---
+
+## Weekly file structure
+
+The complete weekly file looks like this:
+
+```
+# Week of [Month DD–DD], [Year]
+
+## Weekly Summary
+
+**What happened:** [2–3 sentence factual overview of the week]
+
+**Themes this week:** #tag1, #tag2, #tag3
+
+---
+
+people: [key figures who appear this week — not passing mentions]
+places: [meaningful or orienting locations — not incidental settings like "in bed"]
+themes: [2–4 thematic words or short phrases]
+highlights: [one-line summary of 2–3 standout moments]
+
+---
+
+## [Weekday, DD Month]
+
+`tags: #tag1 #tag2 #tag3`
+`keywords: [people, places, themes]`
+
+[Entry content]
+
+---
+
+## [Next entry...]
+
+---
+```
 
 ---
 
 ## Process
 
-1. Read `${CLAUDE_PLUGIN_ROOT}/references/anchor-context.md` for file naming conventions, weekly file structure, and tag system
-2. Confirm the week's date range if not already clear
-3. Determine the correct filename using the naming convention (e.g. `2026-03_mar_week-16.md`)
-4. Populate the file header block:
-   - `people:` — all named people appearing across the week's entries
-   - `places:` — all locations appearing across the week's entries
-   - `themes:` — 2–4 thematic words or short phrases that characterise the week
-   - `highlights:` — one line naming 2–3 standout moments from the week
-5. Compile all daily entry blocks in chronological order
-6. Write the weekly summary:
-   - `**What happened:**` — 2–3 sentences covering the week as a whole
+1. Ask the user which week they are wrapping up:
+   > "Which week would you like to wrap up?"
+   > - This week ([Mon DD Mon] – today)
+   > - Last week ([Mon DD Mon] – [Sun DD Mon])
+
+2. Determine the correct filename using the naming convention above, based on their answer
+
+3. Read all daily entries in the weekly file
+
+4. Check: does the file already have a Weekly Summary section?
+   - If **yes** — stop. Notify the user that this week already has a summary.
+   - If **no** — proceed.
+
+5. Write the Weekly Summary section at the **top** of the file, directly under the title:
+   - `**What happened:**` — 2–3 factual sentences covering the week as a whole
    - `**Themes this week:**` — dominant tags across the week
-7. Output the complete weekly file, ready to save
 
----
+6. Populate the header block beneath the summary:
+   - `people:` — key figures who appear across the week's entries. Exclude anyone mentioned only in passing (a stranger, a name dropped once without context).
+   - `places:` — meaningful or orienting locations (a city, a venue, a significant setting). Exclude incidental details like "at my desk" or "in bed".
+   - `themes:` — 2–4 thematic words or short phrases that characterise the week
+   - `highlights:` — one line naming 2–3 standout moments
 
-## Scheduling & safeguards
+7. Save the updated file
 
-This skill is designed to run on a schedule configured in Cowork.
-Before executing, run the following check:
+8. Confirm to the user: which file was updated, how many entries were synthesised, and any flags or uncertainties carried forward from the entries
 
-1. Are there daily entries in the current weekly file that have not yet been synthesised into a weekly summary?
-   - If **no** — stop. Do not proceed. Do not consume tokens.
-   - If **yes** — proceed with synthesis.
-
-2. On completion, notify the user with a brief confirmation:
-   which file was updated, how many entries were synthesised,
-   and any flags or uncertainties carried forward from the daily entries.
-
-3. After completing synthesis, check whether a monthly summary file
-   exists for the current month (e.g. `2026-03_mar_monthly.md`).
-   If it does not exist and the current date is within the last
-   7 days of the month, notify the user:
-   *"It's nearly the end of [month] — would you like to run the
-   monthly reflection?"*
+9. Check whether a monthly summary file exists for the current month (e.g. `2026-03_mar_monthly.md`). If it does not exist and the current date is within the last 7 days of the month, notify the user: *"It's nearly the end of [month] — would you like to run the monthly reflection?"*
 
 ---
 
 ## Rules
 
-- Preserve the user's exact voice in all entry content — do not paraphrase or tidy up
-- Suggest tags generously — user will trim
+- Preserve the user's exact voice in all entry content — do not paraphrase or edit entries
+- The weekly summary should be **factual and grounded** — not analytical. Save interpretation for the monthly.
+- Suggest the most specific and accurate tags that fit the entry — user will confirm before they're finalised
 - Do not create new tags without flagging to the user
-- The weekly summary should be factual and grounded — not analytical or thematic. Save interpretation for the monthly.
-- If entries span two months, assign the file to whichever month contains more days of that week
-- If any dates are uncertain, carry the uncertainty flag (*[Date approximate]*) forward from the daily entries
-
----
+- If any dates are uncertain, carry the *[Date approximate]* flag forward from the daily entries
