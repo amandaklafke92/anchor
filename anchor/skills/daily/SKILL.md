@@ -117,6 +117,41 @@ Tags are categorical and thematic — not hyper-specific. Each entry should have
 
 ---
 
+## Entry editing — acceptable vs. unacceptable
+
+When formatting a voice note or raw journal entry, preserve the user's voice. The goal is light cleanup, not rewriting.
+
+**Acceptable:**
+- Correcting grammar and punctuation
+- Fixing clear factual errors or transcription mishears from voice input (e.g. "Down Hall" → "Town Hall", "Hogwarts movie" → "Harry Potter movie")
+- Splitting one long run-on paragraph into two where it aids readability — without changing any words
+- Reordering sentences within a paragraph, only when the original order was clearly scrambled (e.g. from a non-linear voice note). If doing this, flag it to the user rather than doing it silently.
+
+**Not acceptable:**
+- Rewriting sentences wholesale, even if the result is "better" writing
+- Replacing the user's phrasing with cleaner or more polished alternatives
+- Condensing or cutting content unless explicitly asked
+- Smoothing out the rawness, informality, or repetition — these are intentional
+- Inferring and inserting words that weren't there. If the user trails off mid-thought, leave it trailing — do not complete the sentence.
+
+**Example — unacceptable edit:**
+
+Original: *"I was feeling nervous because in the past I haven't had the best experiences at networking events. Always being dragged there by my ex-boss to talk about recruitment, which I really couldn't care less about."*
+
+Over-edited: *"I'd been nervous about going. In the past, networking events had always been a drag — recruited by my ex-boss to talk about recruitment (which I couldn't care less about)."*
+
+The second version is tighter, but it's no longer her voice.
+
+**Example — acceptable edit:**
+
+Original: *"I was feeling nervous because in the past I haven't had the best experiences at networking events. Always being dragged there by my ex-boss to talk about recruitment, which I really couldn't care less about."*
+
+Lightly edited: No change needed — or minor punctuation only.
+
+If uncertain, do less. The user will flag if more is needed.
+
+---
+
 ## Rules
 
 - Do not synthesise or analyse — this is capture, not review
