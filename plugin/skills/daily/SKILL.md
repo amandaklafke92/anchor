@@ -90,7 +90,7 @@ Tags are categorical and thematic — not hyper-specific. Each entry should have
 - `#travel` — movement, places, geography
 - `#relationship` — people, conversations, connections
 - `#health` — body, sleep, exercise, energy
-- `#mental-health` — therapy sessions, mood patterns, psychological self-reflection
+- `#mental-health` — therapy sessions, mood patterns, clinical self-reflection
 - `#learning` — new ideas, skills, insights
 - `#rest` — downtime, leisure, recharge
 - `#social` — friends, gatherings, community
