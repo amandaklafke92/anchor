@@ -15,11 +15,11 @@ anchor/
 │   │   ├── daily/SKILL.md
 │   │   └── monthly/SKILL.md
 ├── product/             # Product development work (not part of the plugin)
-│   ├── knowledge-base/  # Specs, decisions, and working principles
+│   ├── strategy/        # Specs, decisions, and working principles
 │   ├── user-flows/      # User flow documentation and prototype screenshots
-│   ├── designs/         # Figma exports and wireframes
-│   ├── research/        # User research and competitive notes
-│   └── testing/         # Prototype feedback and test records
+│   └── designs/         # Figma exports and wireframes
+├── logs/                # Session logs
+├── archive/             # Archived files
 ├── decisions-system.md  # System design decision log — check here before README when a structural question arises
 ├── VISION.md
 └── README.md
@@ -30,7 +30,7 @@ anchor/
 ## Decision logs
 
 - `decisions-system.md` — confirmed design decisions for file structure, metadata, and workflow. The most granular record.
-- `product/knowledge-base/decisions-product.md` — product and feature decisions: what to build, defer, or rule out.
+- `product/strategy/decisions-product.md` — product and feature decisions: what to build, defer, or rule out.
 
 At the end of any product or system work session, check whether decisions were made or surfaced and prompt Amanda to log them if not already captured.
 
