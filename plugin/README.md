@@ -16,7 +16,7 @@ Point the plugin at a private journal folder, not this public repo.
 Recommended private structure:
 
 ```text
-anchor-entries/
+anchor-data/
 ├── entries/
 │   └── 2026-04-13.md
 └── monthlies/

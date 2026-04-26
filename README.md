@@ -31,7 +31,7 @@ See [plugin/README.md](plugin/README.md) for usage notes.
 
 Do not store real journal entries in this public repo.
 
-Real entries, monthlies, exports, and private archive material should live in a separate private folder or repository, such as `anchor-entries/`. This repo intentionally includes only fictional examples under `examples/`.
+Real entries, monthlies, exports, and private archive material should live in a separate private folder or repository, such as `anchor-data/`. This repo intentionally includes only fictional examples under `examples/`.
 
 The default Anchor data shape is:
 
