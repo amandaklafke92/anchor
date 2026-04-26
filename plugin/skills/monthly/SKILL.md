@@ -74,8 +74,8 @@ Each anchor must include: **who, what, and the telling detail.** Length should m
 **Bad:** *"The shoulder press stranger"*
 **Good:** *"After two nights of bad sleep, dragging herself to the gym — a stranger complimented her shoulder press and form unprompted (17.5 kg, 8 reps)"*
 
-**Bad:** *"Conversation with Luis"*
-**Good:** *"Sitting on Luis's bed, him asking 'are you happy with me?' — the honest answer was 'I'm not unhappy with you' but she didn't say it out loud"*
+**Bad:** *"Conversation with Sam"*
+**Good:** *"Sitting on Sam's kitchen floor after dinner, Sam asked 'do you actually want this job?' and the answer came out faster than expected: 'I want the work, not the version of myself I become there.'"*
 
 **Test:** Could the user read this anchor cold in two years and know what happened, without opening the entry file? If no, it needs more specificity. Titles and themes fail this test. Scenes pass it.
 

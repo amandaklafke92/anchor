@@ -9,13 +9,13 @@ status: active
 
 Read this file at the start of every session before doing anything else. It contains everything you need to work in this system correctly.
 
-For design history and rationale behind decisions, see `decision-log.md` — read it only if a design question comes up or you need context on why something works the way it does.
+For design history and rationale behind decisions, see `../decisions-system.md` — read it only if a design question comes up or you need context on why something works the way it does.
 
 ---
 
 ## The user
 
-This system is built for a user with **aphantasia** — she cannot visualise memories. Text records are her memory prosthetic. This is the most important thing to understand about the system. Every entry needs to be specific and sensory enough to reconstruct a moment, not just summarise it.
+This system is built for people who need text records to reconstruct lived experience. Some users may not be able to visualise memories easily. Every entry needs to be specific enough to reconstruct a moment, not just summarise it.
 
 ---
 

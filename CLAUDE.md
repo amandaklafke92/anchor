@@ -14,12 +14,12 @@ anchor/
 │   ├── skills/
 │   │   ├── daily/SKILL.md
 │   │   └── monthly/SKILL.md
+├── docs/                # Public docs for format and roadmap
+├── examples/            # Fictional sample entries and monthlies
 ├── product/             # Product development work (not part of the plugin)
 │   ├── strategy/        # Specs, decisions, and working principles
 │   ├── user-flows/      # User flow documentation and prototype screenshots
 │   └── designs/         # Figma exports and wireframes
-├── logs/                # Session logs
-├── archive/             # Archived files
 ├── decisions-system.md  # System design decision log — check here before README when a structural question arises
 ├── VISION.md
 └── README.md
@@ -32,7 +32,11 @@ anchor/
 - `decisions-system.md` — confirmed design decisions for file structure, metadata, and workflow. The most granular record.
 - `product/strategy/decisions-product.md` — product and feature decisions: what to build, defer, or rule out.
 
-At the end of any product or system work session, check whether decisions were made or surfaced and prompt Amanda to log them if not already captured.
+At the end of any product or system work session, check whether decisions were made or surfaced and prompt the maintainer to log them if not already captured.
+
+## Public/private boundary
+
+This is the public product/plugin repo. Real journal entries, monthlies, private archive exports, and session logs belong outside this repo in a private data folder or repository.
 
 ---
 

@@ -56,6 +56,4 @@ There's also room for personalisation at the capture level. For people who handw
 
 ## Why it exists
 
-Anchor was originally built for someone with aphantasia — no mental imagery. Because she can't visualise memories, text records have to do the work that a mental picture would otherwise do. An entry isn't useful if it just summarises what happened. It has to reconstruct the moment — who was there, what was said, the specific detail that makes it real.
-
-That design constraint turned out to be a better way to journal for everyone.
+Most journaling fails not because people stop caring, but because entries end up too vague to be useful. A record that just says *"good day, had dinner with friends"* doesn't let you go back. Anchor is built around a different principle: entries should reconstruct the moment — who was there, what was said, the specific detail that makes it real. Not a summary. A scene.
